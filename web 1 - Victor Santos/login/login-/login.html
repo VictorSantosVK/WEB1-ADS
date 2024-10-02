@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #divResultado {
+        
+            background-color: rgba(0, 0, 0, 0.7);
+            color:  #ff4757;
+            text-align: center;
+            font-size: 140%;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../../logo.jpg" alt="Logo">
+        <h2>Login</h2>
+        <form id="meuFormulario" action="../../index/Landing Page/LandingPage-Victor.html" method="get">
+            <div id="divResultado"></div>
+
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="validar()">Login</button>
+        </form>
+
+        <div class="links">
+            <a href="../recuperar/recuperar.html">Esqueceu a senha?</a>
+            <a href="../cadastro/cadastro.html">Cadastre-se</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#"><img src="../../index/Landing Page/components/twitter.png" alt="Logo do Twitter" height="30" width="30" class="rodape-icones"></a>
+                    <a href="C:\Users\victo\Downloads\web 1 - Victor Santos\web 1 - Victor Santos-20240809T182405Z-001\web 1 - Victor Santos\index\Landing Page\components\instagram.png" target="_blank"><img src="../../index/Landing Page/components/instagram.png" alt="Logo do Instagram" height="30" width="30" class="rodape-icones"></a>
+                    <a href="#"><img src="../../index/Landing Page/components/facebook.png" alt="Logo do Facebook" height="30" width="30" class="rodape-icones"></a>
+            </div>
+            <p class="copyright">&copy;Victor Santos</p>
+        </div>
+    </footer>
+
+    <script>
+        var divResultado = document.getElementById("divResultado");
+
+        function validar() {
+            var username = document.getElementById("username");
+            if (username.value == "") {
+                divResultado.innerText = "Informe o usuário.";
+                username.focus();
+                return false;
+            }
+
+            var password = document.getElementById("password");
+            if (password.value == "") {
+                divResultado.innerText = "Informe a senha.";
+                password.focus();
+                return false;
+            }
+
+            divResultado.innerText = "Login realizado com sucesso!";
+            var formulario = document.getElementById("meuFormulario");
+            formulario.submit();
+        }
+    </script>
+</body>
+
+</html>

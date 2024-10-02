@@ -1,0 +1,413 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	font-size: 100%;
+	margin: 0;
+}
+
+/*formatação do cabeçalho*/
+a {
+	text-decoration: none;
+
+}
+
+.cabeçalho {
+	position: fixed;
+	background-color: #ffffff;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	border-bottom: 0.4px solid rgb(234, 234, 234);
+
+}
+
+div ul a:hover,
+div ul a:focus {
+	border-bottom: 1px solid rgb(181, 181, 181);
+}
+
+/*formatação da logo da página*/
+header img {
+	display: flex;
+	width: 80px;
+	cursor: pointer;
+	border-radius: 100px;
+}
+
+.sapato01 {
+	display: flex;
+	width: 450px;
+}
+
+/*formatação do menu*/
+.menu {
+	display: flex;
+	margin-right: 1em;
+	padding: 12px;
+}
+
+ul {
+	cursor: pointer;
+	align-items: center;
+	font-size: 20px;
+	display: flex;
+	gap: 25px;
+
+}
+
+li {
+	padding: 12px;
+	display: inline-block;
+	color: rgb(0, 0, 0);
+	font-family: sans-serif;
+}
+
+/*formatação da lupa do cabeçalho*/
+.group {
+	display: flex;
+	line-height: 28px;
+	align-items: center;
+	position: relative;
+	max-width: 120px;
+	cursor: pointer;
+
+}
+
+.input {
+	width: 100%;
+	height: 40px;
+	line-height: 28px;
+	padding: 0 1rem;
+	padding-left: 2.5rem;
+	border: 2px solid transparent;
+	border-radius: 50px;
+	outline: none;
+	background-color: #f3f3f4;
+	color: #0d0c22;
+	transition: .3s ease;
+}
+
+
+.input:focus,
+input:hover {
+	outline-color: none;
+	border-color: rgba(241, 0, 0, 0.4);
+	background-color: #fff;
+	box-shadow: 10 10 10 4px rgba(255, 4, 4, 0.1);
+}
+
+.icon {
+	position: absolute;
+	left: 1rem;
+	fill: #000000;
+	width: 1rem;
+	height: 1rem;
+}
+
+
+/*formatação do conteudo*/
+.conteudo {
+	width: 100%;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	border-top: 0.4px solid rgb(234, 234, 234);
+}
+
+/*formatação do primeiro container*/
+
+.primeiro-container {
+	font-family: fantasy;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	gap: 100px;
+	flex-wrap: wrap;
+}
+
+.conteudo-escrito {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	text-align: center;
+}
+
+/*formatação dos botões */
+.saiba-mais {
+	background-color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+button {
+
+	font-size: 10px;
+	width: 20 0px;
+	height: 60px;
+	border: none;
+
+}
+
+button {
+	padding: 17px 40px;
+	border-radius: 50px;
+	border: 0;
+	background-color: white;
+	box-shadow: rgb(70, 66, 76) 0 0 8px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	font-size: 15px;
+	transition: all .5s ease;
+}
+
+button:hover {
+	letter-spacing: 3px;
+	background-color: hsl(262, 6%, 26%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: rgb(218, 218, 255) 0px 7px 29px 0px;
+}
+
+button:active {
+	letter-spacing: 3px;
+	background-color: hsl(261, 20%, 77%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: rgb(9, 8, 11) 0px 0px 0px 0px;
+	transform: translateY(10px);
+	transition: 100ms;
+}
+
+/*formatação do segundo container*/
+.segundo-container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	border-bottom: 0.4px solid rgb(234, 234, 234);
+	border-top: 0.4px solid rgb(234, 234, 234);
+	background-color: #f9f7f7;
+	width: 100%;
+	gap: 32px;
+	padding: 65px;
+}
+
+/*formatação das imagens do segundo container*/
+.imagens {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 32px;
+	align-items: center;
+}
+
+.equipe {
+	justify-content: space-between;
+}
+
+/*formatação do terceiro container*/
+.terceiro-container {
+    border-top: 0.4px solid rgb(234, 234, 234);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 65px;
+}
+
+.imagens-terceiro-container {
+    cursor: zoom-in;
+    transition: all 0.3s;
+    display: flex; /* Alinha as imagens em linha */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a linha seguinte se não houver espaço suficiente */
+    gap: 10px;
+    margin-bottom: 20px; /* Espaço entre as imagens e o link */
+}
+
+.imagens-terceiro-container img {
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 8px;
+    width: 250px;
+    height: 150px;
+    transition: all 0.3s;
+}
+
+.imagens-terceiro-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do link */
+a.link-produtos {
+    display: block; /* Faz o link ocupar toda a largura disponível */
+    margin: 0 auto; /* Centraliza o link */
+    padding: 15px 25px;
+    border: 1px solid rgb(195, 195, 195); /* Borda similar às imagens */
+    border-radius: 8px; /* Mesmo raio das imagens */
+    background-color: #ddd8d8; /* Cor de fundo igual ao das imagens */
+    color: #000000; /* Cor do texto igual ao das imagens */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Centraliza o texto dentro do link */
+}
+
+a.link-produtos:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse, semelhante ao efeito de hover das imagens */
+    transform: scale(1.05); /* Efeito de destaque ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao hover */
+}
+
+
+
+
+/*formatação do quarto container*/
+.quarto-container {
+	border-top: 0.4px solid rgb(234, 234, 234);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 65px;
+}
+
+.botao-formulario {
+	margin: 15px;
+}
+
+/*formatação do formulário*/
+.formulario {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+div#nomeEmail {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+div#nome>input,
+div#email>input {
+	width: 25vw;
+	height: 6vh;
+	border-radius: 10px;
+}
+
+div#descricao>input {
+	width: 50vw;
+	height: 15vh;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+div#botao-formulario {
+	text-align: center;
+}
+
+
+
+/*formatação do rodapé*/
+footer {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: rgb(208, 204, 204);
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.logos {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+
+}
+.imagens-do-rodape{
+	margin-left: 25px;
+}
+
+.copyright{
+	margin-right: 35px;
+}
+
+.group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.group .input {
+    padding: 10px;
+    padding-left: 40px; /* Ajuste conforme necessário para o ícone de lupa */
+    padding-right: 40px; /* Ajuste conforme necessário para o ícone de carrinho */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.group .icon {
+    position: absolute;
+    left: 10px; /* Ajuste conforme necessário */
+    fill: gray;
+    width: 20px;
+    height: 20px;
+}
+
+.group .icon-carrinho {
+    position: absolute;
+    right: 10px; /* Ajuste conforme necessário */
+    fill: gray;
+    width: 20px;
+    height: 20px;
+}
+
+.promocao {
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center; 
+    transition: transform 0.3s ease; 
+    z-index: 1000; /* Garante que a div fique sobre outros elementos da página */
+}
+
+.promocao:hover {
+    transform: scale(1.05); 
+}
+
+.promocao img {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+
+.promocao a {
+    text-decoration: none;
+    color: #ff4757; 
+    font-weight: bold;
+    transition: color 0.3s ease; /* Adiciona uma transição suave na cor do texto */
+}
+
+.promocao a:hover p {
+    color: #e84118;
+}
+
+.promocao p {
+    font-size: 1em;
+    margin: 0; /* Remove margens padrão do parágrafo */
+}
+

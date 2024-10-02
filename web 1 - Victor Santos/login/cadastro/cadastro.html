@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #divResultado {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            color:  #ff4757;
+            text-align: center;
+            font-size: 140%;
+            display: none; /* Oculta a div inicialmente */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../../logo.jpg" alt="Logo">
+        <nav>
+            <div class="itens-header">
+                <a href="../login-/login.html">Voltar</a>
+                <a href="../recuperar/recuperar.html">Esqueceu a senha?</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Cadastro de Usuário</h2>
+        <div id="divResultado"></div>
+        <form id="cadastroUsuario" action="../login-/login.html" method="get">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="sexo">Sexo:</label>
+            <div class="radio-group">
+                <input type="radio" id="sexo_m" name="sexo" value="M" required>
+                <label for="sexo_m">Masculino</label>
+                <input type="radio" id="sexo_f" name="sexo" value="F">
+                <label for="sexo_f">Feminino</label>
+                <input type="radio" id="sexo_NI" name="sexo" value="NI">
+                <label for="sexo_NI">Não informar</label>
+            </div>
+
+            <label>Preferências:</label>
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="preferencia1" name="preferencias" value="Jordan">
+                    <label for="preferencia1">Air Jordan</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="preferencia2" name="preferencias" value="Force">
+                    <label for="preferencia2">Air Force</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="preferencia3" name="preferencias" value="Air Max">
+                    <label for="preferencia3">Air Max</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="preferencia4" name="preferencias" value="Dunks">
+                    <label for="preferencia4">Dunks</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="preferencia5" name="preferencias" value="Revolution">
+                    <label for="preferencia5">Revolution</label>
+                </div>
+            </div>
+
+            <label for="observacoes">Observações:</label>
+            <textarea id="observacoes" name="observacoes"></textarea>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <label for="confirmar_senha">Confirmar Senha:</label>
+            <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+
+            <div class="form-buttons">
+                <input type="submit" value="Cadastrar" onclick="return validarCadastro();">
+                <input type="reset" value="Limpar">
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <section class="logo-do-rodape">
+            <div class="logos">
+                <div class="imagens-do-rodape">
+                    <a href="#"><img src="../../index/Landing Page/components/twitter.png" alt="Logo do Twitter" height="30" width="30" class="rodape-icones"></a>
+                    <a href="C:\Users\victo\Downloads\web 1 - Victor Santos\web 1 - Victor Santos-20240809T182405Z-001\web 1 - Victor Santos\index\Landing Page\components\instagram.png" target="_blank"><img src="../../index/Landing Page/components/instagram.png" alt="Logo do Instagram" height="30" width="30" class="rodape-icones"></a>
+                    <a href="#"><img src="../../index/Landing Page/components/facebook.png" alt="Logo do Facebook" height="30" width="30" class="rodape-icones"></a>
+                </div>
+                <p class="copyright">&copy;Victor Santos</p>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        function validarCadastro() {
+            var divResultado = document.getElementById("divResultado");
+            divResultado.style.display = "none"; // Oculta a div antes de iniciar a validação
+
+            // Nome
+            var nome = document.getElementById("nome");
+            if (nome.value == "") {
+                divResultado.innerText = "Informe o nome.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                nome.focus();
+                return false;
+            }
+
+            // Sexo
+            if (!document.querySelector('input[name="sexo"]:checked')) {
+                divResultado.innerText = "Informe o sexo.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                return false;
+            }
+
+            // Preferências
+            var preferencias = document.querySelectorAll('input[name="preferencias"]:checked');
+            if (preferencias.length == 0) {
+                divResultado.innerText = "Selecione pelo menos uma preferência.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                return false;
+            }
+
+            // E-mail
+            var email = document.getElementById("email");
+            if (email.value == "") {
+                divResultado.innerText = "Informe o e-mail.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                email.focus();
+                return false;
+            }
+
+            // Senha
+            var senha = document.getElementById("senha");
+            var confirmarSenha = document.getElementById("confirmar_senha");
+            if (senha.value == "") {
+                divResultado.innerText = "Informe a senha.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                senha.focus();
+                return false;
+            }
+
+            if (senha.value !== confirmarSenha.value) {
+                divResultado.innerText = "As senhas não conferem.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                confirmarSenha.focus();
+                return false;
+            }
+
+            alert("Cadastro realizado com sucesso!"); // Exibe um alerta ao finalizar o cadastro
+            return true; // Se tudo estiver correto, permite o envio do formulário
+        }
+    </script>
+</body>
+</html>

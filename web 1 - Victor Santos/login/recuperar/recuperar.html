@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueceu a Senha</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #divResultado {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: red;
+            text-align: center;
+            font-size: 140%;
+            display: none; /* Oculta a div inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../../logo.jpg" width="80" height="80" style="border-radius: 100px;">
+        <h2>Esqueceu a Senha</h2>
+        <div id="divResultado"></div>
+        <form id="esqueceuSenha" onsubmit="return validarEmail();">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <a href="../login-/login.html">Voltar ao Login</a>
+    </div>
+
+    <script>
+        function validarEmail() {
+            var divResultado = document.getElementById("divResultado");
+            divResultado.style.display = "none"; // Oculta a div antes de iniciar a validação
+
+            // Email
+            var email = document.getElementById("email");
+            if (email.value === "") {
+                divResultado.innerText = "Informe o e-mail.";
+                divResultado.style.display = "block"; // Exibe a div se houver erro
+                email.focus();
+                return false;
+            }
+
+            // Exibe um alerta se o e-mail for válido
+            alert("Um link para redefinir sua senha foi enviado para o e-mail fornecido.");
+            return false; // Impede o envio do formulário
+        }
+    </script>
+</body>
+</html>

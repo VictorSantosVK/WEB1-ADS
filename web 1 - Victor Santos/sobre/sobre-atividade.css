@@ -1,0 +1,85 @@
+/* estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* estilização da logo e botão voltar */
+.logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 100px;
+}
+
+.btn-voltar {
+    background-color: #ff4757;
+    color: white;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100px;
+}
+
+.btn-voltar:hover {
+    background-color: #e63946;
+}
+
+/* container principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* header */
+header {
+    background-color: #ff4757;
+    color: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* conteúdo principal */
+.activity-details {
+    margin: 40px 0;
+    text-align: left;
+}
+
+.activity-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
